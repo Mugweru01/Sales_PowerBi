@@ -4,9 +4,9 @@
 ![Format](https://img.shields.io/badge/format-PBIP-blue)
 ![Repository](https://img.shields.io/badge/repository-GitHub-181717?logo=github)
 
-A source-controlled Power BI project for exploring sales performance, profitability, products, markets, discounts, and time-based trends. The project uses Power BI Project (`.pbip`) format so report pages, visual definitions, themes, semantic-model metadata, relationships, and Power Query partitions can be reviewed and versioned as text files in Git.
+A source-controlled Power BI project for exploring sales performance, profitability, products, markets, discounts, and time-based trends. The project uses Power BI Project (`.pbip`) format so report definitions stay in text and Git can review changes.
 
-> **Current data-source note:** The semantic model currently references Microsoft's local Power BI Desktop sample workbook, `Financial Sample.xlsx`. The workbook itself is not included in this repository, and its local path may need to be changed before refreshing the model on another computer.
+> **Current data-source note:** The semantic model currently references Microsoft's local Power BI Desktop sample workbook, `Financial Sample.xlsx`. The workbook itself is not included in this repository.
 
 ## Contents
 
@@ -26,7 +26,7 @@ A source-controlled Power BI project for exploring sales performance, profitabil
 
 ## Project overview
 
-Sales Power BI is an interactive sales-analysis report built around the Microsoft Power BI financial sample data. It is intended for analysts, business users, and Power BI developers who need to explore:
+Sales Power BI is an interactive sales-analysis report built around the Microsoft Power BI financial sample data. It is intended for analysts, business users, and Power BI developers who need to explore financial performance and product-market trends.
 
 - Sales and profit performance over time
 - Results by country, segment, and product
@@ -39,7 +39,7 @@ The repository stores the editable report and model definitions rather than a pu
 
 ## Screenshots
 
-The report definition currently contains three report pages: **Dashboard**, **Sales Breakdown**, and **Profits Breakdowns**. The repository does not yet include exported screenshots, so the image paths below are ready-to-use documentation locations rather than links to existing files.
+The report definition currently contains three report pages: **Dashboard**, **Sales Breakdown**, and **Profits Breakdowns**. The project includes the report screenshots below for quick review in the repository.
 
 Add screenshots to `docs/images/` using these suggested names:
 
@@ -55,32 +55,23 @@ Then replace or enable the image references below:
 
 ### Dashboard
 
-<!-- Add docs/images/dashboard.png when an export is available. -->
-
-![Dashboard](<img width="1347" height="758" alt="image" src="https://github.com/user-attachments/assets/42f9f0ca-71d5-49cd-9c64-41ad3031862a" />
-)
+<img src="https://github.com/user-attachments/assets/42f9f0ca-71d5-49cd-9c64-41ad3031862a" alt="Dashboard" width="1347" />
 
 The dashboard is the report landing page and includes time-based analysis such as the **Profits Per Month** visual.
 
 ### Sales Breakdown
 
-<!-- Add docs/images/sales-breakdown.png when an export is available. -->
-
-![Sales Breakdown](<img width="1342" height="757" alt="image" src="https://github.com/user-attachments/assets/614cbfe3-6ea5-4927-9834-df407f94c2b8" />
-)
+<img src="https://github.com/user-attachments/assets/614cbfe3-6ea5-4927-9834-df407f94c2b8" alt="Sales Breakdown" width="1342" />
 
 The Sales Breakdown page provides detailed filtering and comparison across sales dimensions, including date, country, segment, product, and discount band.
 
 ### Profits Breakdowns
 
-<!-- Add docs/images/profits-breakdowns.png when an export is available. -->
-
-![Profits Breakdowns](<img width="1347" height="756" alt="image" src="https://github.com/user-attachments/assets/23e67c87-822c-4b3e-b290-c8d2a9570c13" />
-)
+<img src="https://github.com/user-attachments/assets/23e67c87-822c-4b3e-b290-c8d2a9570c13" alt="Profits Breakdowns" width="1347" />
 
 The Profits Breakdowns page includes the **Profits VS Units Sold Per Segment** comparison and is intended for segment-level profitability analysis.
 
-> **Adding screenshots:** Export each page from Power BI Desktop as an image, save the files under `docs/images/`, and commit them with the README update. Avoid publishing screenshots that expose confidential data or connection details.
+> **Adding screenshots:** Export each page from Power BI Desktop as an image, save the files under `docs/images/`, and commit them with the README update. Avoid publishing screenshots that expose confidential data or proprietary business information.
 
 ## Architecture
 
@@ -144,11 +135,11 @@ The project follows the Power BI Project architecture: a project entry point con
 
 ### Dashboard
 
-The landing page uses a `1920 x 1080` canvas and provides an overview of the model. One inspected visual is a line/stacked-column combination chart titled **Profits Per Month**. It uses the `Sheet1` date hierarchy at the month level and aggregates `Sheet1.Profit`.
+The landing page uses a `1920 x 1080` canvas and provides an overview of the model. One inspected visual is a line/stacked-column combination chart titled **Profits Per Month**. It uses the `Sheet1` date hierarchy and tracks month-over-month performance.
 
 ### Sales Breakdown
 
-This page uses a `1920 x 1080` canvas and includes an advanced date slicer configured against the `Sheet1` date hierarchy at the day level. The slicer is sorted ascending and belongs to the synchronized `Day` filter group.
+This page uses a `1920 x 1080` canvas and includes an advanced date slicer configured against the `Sheet1` date hierarchy at the day level. The slicer is sorted ascending and belongs to the synchronized page filter state.
 
 The page is intended for examining the effects of date selection across business dimensions such as country, segment, product, and discount band.
 
@@ -199,7 +190,7 @@ The model defines:
 2. `Sheet1.Date` to its generated local date table.
 3. `financials.Country` to `Sheet1.Country`, configured with bidirectional cross-filtering and many-side cardinality on the `Sheet1` side.
 
-Because `financials` and `Sheet1` contain similar fields, contributors should confirm which table a new visual should use. Changes to the country relationship should be validated carefully for duplicated totals, unexpected filter propagation, or ambiguous results.
+Because `financials` and `Sheet1` contain similar fields, contributors should confirm which table a new visual should use. Changes to the country relationship should be validated carefully for duplicate filtering effects and business logic.
 
 ### Example DAX query
 
@@ -273,7 +264,7 @@ Do not commit confidential, regulated, or production data to the repository mere
 - Access to the source workbook, or permission to update the data-source expression
 - Git, if cloning or contributing through version control
 
-There is no application runtime, package manager, build script, automated test runner, or external code dependency declared in this repository. Power BI Desktop is the development and execution environment.
+There is no application runtime, package manager, build script, automated test runner, or external code dependency declared in this repository. Power BI Desktop is the development and execution environment for this project.
 
 ## Open the project
 
