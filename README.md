@@ -332,18 +332,6 @@ These files are machine-specific settings and cache artifacts. They should remai
 - There are no automated tests or CI workflows for opening, refreshing, or validating the report.
 - The repository does not publish a Power BI Service workspace or scheduled refresh.
 - The two overlapping source tables require care when adding new visuals or measures.
-- No screenshot files are currently committed; the README includes placeholders for future exports.
-
-### Recommended improvements
-
-1. Add the three report screenshots under `docs/images/`.
-2. Parameterize the Excel source path.
-3. Decide whether `financials`, `Sheet1`, or a consolidated table should be the canonical reporting table.
-4. Add explicit model measures for total sales, total profit, profit margin, discounts, COGS, and units sold.
-5. Add a dedicated shared date table if time intelligence needs to work consistently across both source tables.
-6. Add a data dictionary describing field definitions and business meaning.
-7. Add a refresh and validation checklist for contributors.
-8. Add a suitable open-source license if reuse is intended.
 
 ## License
 
