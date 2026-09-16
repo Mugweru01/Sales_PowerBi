@@ -57,7 +57,8 @@ Then replace or enable the image references below:
 
 <!-- Add docs/images/dashboard.png when an export is available. -->
 
-![Dashboard](docs/images/dashboard.png)
+![Dashboard](<img width="1347" height="758" alt="image" src="https://github.com/user-attachments/assets/42f9f0ca-71d5-49cd-9c64-41ad3031862a" />
+)
 
 The dashboard is the report landing page and includes time-based analysis such as the **Profits Per Month** visual.
 
@@ -65,7 +66,8 @@ The dashboard is the report landing page and includes time-based analysis such a
 
 <!-- Add docs/images/sales-breakdown.png when an export is available. -->
 
-![Sales Breakdown](docs/images/sales-breakdown.png)
+![Sales Breakdown](<img width="1342" height="757" alt="image" src="https://github.com/user-attachments/assets/614cbfe3-6ea5-4927-9834-df407f94c2b8" />
+)
 
 The Sales Breakdown page provides detailed filtering and comparison across sales dimensions, including date, country, segment, product, and discount band.
 
@@ -73,7 +75,8 @@ The Sales Breakdown page provides detailed filtering and comparison across sales
 
 <!-- Add docs/images/profits-breakdowns.png when an export is available. -->
 
-![Profits Breakdowns](docs/images/profits-breakdowns.png)
+![Profits Breakdowns](<img width="1347" height="756" alt="image" src="https://github.com/user-attachments/assets/23e67c87-822c-4b3e-b290-c8d2a9570c13" />
+)
 
 The Profits Breakdowns page includes the **Profits VS Units Sold Per Segment** comparison and is intended for segment-level profitability analysis.
 
