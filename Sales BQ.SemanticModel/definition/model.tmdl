@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["financials","Sheet1"]
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","TMDLView_Desktop","DevMode"]
+
+ref table financials
+ref table DateTableTemplate_42d2e8a4-bb4b-4f54-9fdf-e37ec5eca499
+ref table LocalDateTable_ae7b3b2f-122a-46b2-b5e5-60c584198e1d
+ref table Sheet1
+ref table LocalDateTable_afd55600-2006-4864-bab6-09a8b5cd6f3e
+
+ref cultureInfo en-US
+

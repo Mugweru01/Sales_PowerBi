@@ -1,0 +1,16 @@
+relationship 2c5bed38-821c-42b3-ac7a-dd299024a4f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: financials.Date
+	toColumn: LocalDateTable_ae7b3b2f-122a-46b2-b5e5-60c584198e1d.Date
+
+relationship 3000feba-e540-4c8c-84a6-97430993c8c2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Sheet1.Date
+	toColumn: LocalDateTable_afd55600-2006-4864-bab6-09a8b5cd6f3e.Date
+
+relationship e140d1b1-b858-4ab1-0244-9b04a3f3bed0
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: financials.Country
+	toColumn: Sheet1.Country
+

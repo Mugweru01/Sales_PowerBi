@@ -1,0 +1,12 @@
+createOrReplace
+
+	ref table financials
+
+		column Country
+			dataType: string
+			lineageTag: f5f2974e-430e-4582-8187-9d690e5e19d6
+			summarizeBy: none
+			sourceColumn: Country
+
+			annotation SummarizationSetBy = Automatic
+
